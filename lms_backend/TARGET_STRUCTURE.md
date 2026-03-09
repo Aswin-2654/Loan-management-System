@@ -1,0 +1,92 @@
+﻿# Backend Target Structure
+
+app/
+  main.py
+  core/
+    config.py
+    database.py
+    security.py
+    dependencies.py
+  modules/
+    auth/
+      router.py
+      service.py
+      repository.py
+      schemas.py
+    customer/
+      router.py
+      service.py
+      repository.py
+      schemas.py
+    manager/
+      router.py
+      service.py
+      repository.py
+      schemas.py
+    admin/
+      router.py
+      service.py
+      approvals/
+        router.py
+        service.py
+      audit/
+        router.py
+        service.py
+      staff/
+        router.py
+        service.py
+      settings/
+        router.py
+        service.py
+      support/
+        router.py
+        service.py
+    verification/
+      router.py
+      service.py
+      repository.py
+      schemas.py
+    payments/
+      router.py
+      service.py
+      repository.py
+      schemas.py
+    transactions/
+      router.py
+      service.py
+      repository.py
+      schemas.py
+    wallet/
+      router.py
+      service.py
+      repository.py
+      schemas.py
+    emi/
+      router.py
+      service.py
+      workflow.py
+    loan/
+      router.py
+      service.py
+      repository.py
+      schemas.py
+      workflow/
+        approval_engine.py
+        sanction_engine.py
+        disbursement_engine.py
+  shared/
+    constants.py
+    utils.py
+    exceptions.py
+  tests/
+    modules/
+      auth/
+      customer/
+      admin/
+      wallet/
+
+Rule of thumb:
+- router: request/response and auth guards only
+- service: business logic only
+- repository: database read/write only
+- schemas: Pydantic contracts only
